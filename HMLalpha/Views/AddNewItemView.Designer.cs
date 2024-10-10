@@ -1,4 +1,5 @@
-﻿namespace HMLalpha.Views
+﻿
+namespace HMLalpha.Views
 {
     partial class AddNewItemView
     {
@@ -61,8 +62,8 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            CancelButton = new Button();
+            AddNewItemButton = new Button();
             HelperTooltip = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -119,7 +120,6 @@
             // 
             // ItemPhotoSelectorButton
             // 
-            ItemPhotoSelectorButton.Enabled = false;
             ItemPhotoSelectorButton.Image = Properties.Resources.Image;
             ItemPhotoSelectorButton.Location = new Point(241, 444);
             ItemPhotoSelectorButton.Name = "ItemPhotoSelectorButton";
@@ -142,6 +142,7 @@
             // 
             // ItemPhotoSelector
             // 
+            ItemPhotoSelector.Image = Properties.Resources.ItemDefaultPhoto;
             ItemPhotoSelector.Location = new Point(283, 397);
             ItemPhotoSelector.Name = "ItemPhotoSelector";
             ItemPhotoSelector.Size = new Size(106, 70);
@@ -157,6 +158,7 @@
             UserPointsTextBox.RightToLeft = RightToLeft.Yes;
             UserPointsTextBox.Size = new Size(287, 23);
             UserPointsTextBox.TabIndex = 1;
+            UserPointsTextBox.Text = "0";
             // 
             // CustomerPointsTextBox
             // 
@@ -166,6 +168,7 @@
             CustomerPointsTextBox.RightToLeft = RightToLeft.Yes;
             CustomerPointsTextBox.Size = new Size(299, 23);
             CustomerPointsTextBox.TabIndex = 1;
+            CustomerPointsTextBox.Text = "0";
             // 
             // ItemBrandSelector
             // 
@@ -272,6 +275,7 @@
             ItemNPPTextBox.Size = new Size(126, 23);
             ItemNPPTextBox.TabIndex = 23;
             HelperTooltip.SetToolTip(ItemNPPTextBox, "العدد لكل جزء يعني أن الجزء الواحد من الصنف (الشريط) يتكون من كم (قرص / كبسول) مثال: الشريط الواحد يتألف من 10 أقراص");
+            ItemNPPTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemPPITextBox
             // 
@@ -282,6 +286,7 @@
             ItemPPITextBox.Size = new Size(102, 23);
             ItemPPITextBox.TabIndex = 24;
             HelperTooltip.SetToolTip(ItemPPITextBox, "عدد الأجزاء في الصنف عبارة عن من كم جزء (شريط) تتكون العبوة الكاملة للصنف مثال: العبوة الواحدة = 3 أشرطة");
+            ItemPPITextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemVATTextBox
             // 
@@ -292,6 +297,8 @@
             ItemVATTextBox.Size = new Size(121, 23);
             ItemVATTextBox.TabIndex = 25;
             ItemVATTextBox.Tag = "برجاء إدخال قيمة الضريبة هنا مثال:(0.75)";
+            ItemVATTextBox.Text = "0";
+            ItemVATTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemVendorPriceTextBox
             // 
@@ -302,6 +309,7 @@
             ItemVendorPriceTextBox.Size = new Size(126, 23);
             ItemVendorPriceTextBox.TabIndex = 26;
             ItemVendorPriceTextBox.Tag = "برجاء إدخال السعر هنا مثال:(8.50)";
+            ItemVendorPriceTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemRetailPriceTextBox
             // 
@@ -312,6 +320,7 @@
             ItemRetailPriceTextBox.Size = new Size(151, 23);
             ItemRetailPriceTextBox.TabIndex = 27;
             ItemRetailPriceTextBox.Tag = "برجاء إدخال السعر هنا مثال:(8.50)";
+            ItemRetailPriceTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemNameTextBox
             // 
@@ -321,6 +330,7 @@
             ItemNameTextBox.RightToLeft = RightToLeft.Yes;
             ItemNameTextBox.Size = new Size(427, 23);
             ItemNameTextBox.TabIndex = 28;
+            ItemNameTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemBarcodeTextBox
             // 
@@ -330,6 +340,7 @@
             ItemBarcodeTextBox.RightToLeft = RightToLeft.Yes;
             ItemBarcodeTextBox.Size = new Size(323, 23);
             ItemBarcodeTextBox.TabIndex = 29;
+            ItemBarcodeTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // label8
             // 
@@ -412,30 +423,32 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(CancelButton);
+            panel1.Controls.Add(AddNewItemButton);
             panel1.Location = new Point(0, 496);
             panel1.Name = "panel1";
             panel1.Size = new Size(1042, 39);
             panel1.TabIndex = 1;
             // 
-            // button2
+            // CancelButton
             // 
-            button2.Location = new Point(433, 8);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "إلغاء";
-            button2.UseVisualStyleBackColor = true;
+            CancelButton.Location = new Point(433, 8);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new Size(75, 23);
+            CancelButton.TabIndex = 2;
+            CancelButton.Text = "إلغاء";
+            CancelButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AddNewItemButton
             // 
-            button1.Location = new Point(534, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "إضافة";
-            button1.UseVisualStyleBackColor = true;
+            AddNewItemButton.Enabled = false;
+            AddNewItemButton.Location = new Point(534, 8);
+            AddNewItemButton.Name = "AddNewItemButton";
+            AddNewItemButton.Size = new Size(75, 23);
+            AddNewItemButton.TabIndex = 2;
+            AddNewItemButton.Text = "إضافة";
+            AddNewItemButton.UseVisualStyleBackColor = true;
+            AddNewItemButton.Click += AddNewItemButton_Click;
             // 
             // HelperTooltip
             // 
@@ -469,6 +482,8 @@
             ResumeLayout(false);
         }
 
+
+
         #endregion
 
         private SplitContainer splitContainer1;
@@ -501,8 +516,8 @@
         private Label label3;
         private Label label2;
         private Panel panel1;
-        private Button button2;
-        private Button button1;
+        private Button CancelButton;
+        private Button AddNewItemButton;
         private Button ItemRelatedOffersButton;
         private PictureBox ItemPhotoSelector;
         private Label label15;

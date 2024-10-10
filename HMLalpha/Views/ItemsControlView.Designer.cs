@@ -38,6 +38,10 @@
             ItemSearch = new GroupBox();
             ItemSearchTextBox = new TextBox();
             ItemIdentifierLabel = new Label();
+            toolStripButton1 = new ToolStripButton();
+            ItemExtraDataTool = new ToolStripDropDownButton();
+            CurrentItemExpiryTool = new ToolStripMenuItem();
+            CurrentItemPhoto = new ToolStripMenuItem();
             ItemsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ItemsListGridView).BeginInit();
             toolStrip1.SuspendLayout();
@@ -74,7 +78,7 @@
             // 
             toolStrip1.AutoSize = false;
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { AddNewItemTool, UpdateCurrentItemTool, DeleteCurrentItemTool, PrintAllItemsTool });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { AddNewItemTool, ItemExtraDataTool, UpdateCurrentItemTool, DeleteCurrentItemTool, PrintAllItemsTool, toolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(0, 0, 150, 0);
@@ -146,6 +150,36 @@
             ItemIdentifierLabel.TabIndex = 0;
             ItemIdentifierLabel.Text = "بيانات البحث:";
             // 
+            // toolStripButton1
+            // 
+            toolStripButton1.Image = Properties.Resources.ExportData;
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(131, 49);
+            toolStripButton1.Text = "تصدير قائمة الأصناف";
+            // 
+            // ItemExtraDataTool
+            // 
+            ItemExtraDataTool.DropDownItems.AddRange(new ToolStripItem[] { CurrentItemExpiryTool, CurrentItemPhoto });
+            ItemExtraDataTool.Image = Properties.Resources.ExtraData;
+            ItemExtraDataTool.ImageTransparentColor = Color.Magenta;
+            ItemExtraDataTool.Name = "ItemExtraDataTool";
+            ItemExtraDataTool.Size = new Size(192, 49);
+            ItemExtraDataTool.Text = "بيانات إضافية عن الصنف الحالي";
+            // 
+            // CurrentItemExpiryTool
+            // 
+            CurrentItemExpiryTool.Name = "CurrentItemExpiryTool";
+            CurrentItemExpiryTool.Size = new Size(209, 22);
+            CurrentItemExpiryTool.Text = "تاريخ صلاحية الصنف الحالي";
+            // 
+            // CurrentItemPhoto
+            // 
+            CurrentItemPhoto.Image = Properties.Resources.Image;
+            CurrentItemPhoto.Name = "CurrentItemPhoto";
+            CurrentItemPhoto.Size = new Size(209, 22);
+            CurrentItemPhoto.Text = "عرض صورة الصنف الحالي";
+            // 
             // ItemsControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,5 +215,9 @@
         private GroupBox ItemSearch;
         private TextBox ItemSearchTextBox;
         private Label ItemIdentifierLabel;
+        private ToolStripButton toolStripButton1;
+        private ToolStripDropDownButton ItemExtraDataTool;
+        private ToolStripMenuItem CurrentItemExpiryTool;
+        private ToolStripMenuItem CurrentItemPhoto;
     }
 }

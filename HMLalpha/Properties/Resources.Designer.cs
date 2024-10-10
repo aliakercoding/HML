@@ -143,6 +143,26 @@ namespace HMLalpha.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExportData {
+            get {
+                object obj = ResourceManager.GetObject("ExportData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExtraData {
+            get {
+                object obj = ResourceManager.GetObject("ExtraData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HelpTableOfContents {
             get {
                 object obj = ResourceManager.GetObject("HelpTableOfContents", resourceCulture);
@@ -156,6 +176,16 @@ namespace HMLalpha.Properties {
         internal static System.Drawing.Bitmap Image {
             get {
                 object obj = ResourceManager.GetObject("Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ItemDefaultPhoto {
+            get {
+                object obj = ResourceManager.GetObject("ItemDefaultPhoto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

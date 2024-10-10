@@ -33,7 +33,7 @@ namespace HMLalpha.Controllers
         }
 
         // Configuring method for adding new item
-        public static int PROCEDURE_ADDNEWITEM(BigInteger Barcode,string Name,decimal Rprice,decimal Vprice,byte Photo,decimal Vat,decimal Ppi,decimal Npp,decimal Uap,decimal Cap,BigInteger CatalogID,BigInteger SectionID,BigInteger BrandID)
+        public static int PROCEDURE_ADDNEWITEM(long Barcode, string Name, decimal Rprice, decimal Vprice, byte[] Photo, decimal Vat, decimal Ppi, decimal Npp, decimal Uap, decimal Cap, long CatalogID, long SectionID, long BrandID)
         {
             int rowsCount =
                 DataConfigurations.ExecuteNonQuery("PROCEDURE_ADDNEWITEM", CommandType.StoredProcedure,
