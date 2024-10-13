@@ -57,6 +57,12 @@ namespace HMLalpha.Views
 
             int rowsCount = ItemsController.PROCEDURE_ADDNEWITEM(long.Parse(ItemBarcodeTextBox.Text), ItemNameTextBox.Text, decimal.Parse(ItemRetailPriceTextBox.Text), decimal.Parse(ItemVendorPriceTextBox.Text), photoArray, decimal.Parse(ItemVATTextBox.Text), decimal.Parse(ItemPPITextBox.Text), decimal.Parse(ItemNPPTextBox.Text), decimal.Parse(UserPointsTextBox.Text), decimal.Parse(CustomerPointsTextBox.Text), (long)ItemCatalogSelector.SelectedValue, (long)ItemSectionSelector.SelectedValue, (long)ItemBrandSelector.SelectedValue);
             MessageBox.Show(" تم إضافة الصنف " + ItemNameTextBox.Text + " بنجاح ", "تم الإعتماد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

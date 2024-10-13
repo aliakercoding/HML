@@ -30,18 +30,26 @@
         {
             ItemsList = new GroupBox();
             ItemsListGridView = new DataGridView();
+            IDColumn = new DataGridViewTextBoxColumn();
+            BarcodeColumn = new DataGridViewTextBoxColumn();
+            NameColumn = new DataGridViewTextBoxColumn();
+            RetailPriceColumn = new DataGridViewTextBoxColumn();
+            QuantityColumn = new DataGridViewTextBoxColumn();
+            CatalogRelatedColumn = new DataGridViewTextBoxColumn();
+            SectionRelatedColumn = new DataGridViewTextBoxColumn();
+            BrandRelatedColumn = new DataGridViewTextBoxColumn();
             toolStrip1 = new ToolStrip();
             AddNewItemTool = new ToolStripButton();
-            UpdateCurrentItemTool = new ToolStripButton();
-            DeleteCurrentItemTool = new ToolStripButton();
-            PrintAllItemsTool = new ToolStripButton();
-            ItemSearch = new GroupBox();
-            ItemSearchTextBox = new TextBox();
-            ItemIdentifierLabel = new Label();
-            toolStripButton1 = new ToolStripButton();
             ItemExtraDataTool = new ToolStripDropDownButton();
             CurrentItemExpiryTool = new ToolStripMenuItem();
             CurrentItemPhoto = new ToolStripMenuItem();
+            UpdateCurrentItemTool = new ToolStripButton();
+            DeleteCurrentItemTool = new ToolStripButton();
+            PrintAllItemsTool = new ToolStripButton();
+            toolStripButton1 = new ToolStripButton();
+            ItemSearch = new GroupBox();
+            ItemSearchTextBox = new TextBox();
+            ItemIdentifierLabel = new Label();
             ItemsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ItemsListGridView).BeginInit();
             toolStrip1.SuspendLayout();
@@ -65,6 +73,7 @@
             ItemsListGridView.AllowUserToDeleteRows = false;
             ItemsListGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ItemsListGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ItemsListGridView.Columns.AddRange(new DataGridViewColumn[] { IDColumn, BarcodeColumn, NameColumn, RetailPriceColumn, QuantityColumn, CatalogRelatedColumn, SectionRelatedColumn, BrandRelatedColumn });
             ItemsListGridView.Dock = DockStyle.Fill;
             ItemsListGridView.Location = new Point(3, 19);
             ItemsListGridView.MultiSelect = false;
@@ -73,6 +82,55 @@
             ItemsListGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             ItemsListGridView.Size = new Size(1097, 449);
             ItemsListGridView.TabIndex = 0;
+            // 
+            // IDColumn
+            // 
+            IDColumn.HeaderText = "مسلسل الصنف";
+            IDColumn.Name = "IDColumn";
+            IDColumn.ReadOnly = true;
+            IDColumn.Visible = false;
+            // 
+            // BarcodeColumn
+            // 
+            BarcodeColumn.HeaderText = "باركود الصنف";
+            BarcodeColumn.Name = "BarcodeColumn";
+            BarcodeColumn.ReadOnly = true;
+            // 
+            // NameColumn
+            // 
+            NameColumn.HeaderText = "إسم الصنف";
+            NameColumn.Name = "NameColumn";
+            NameColumn.ReadOnly = true;
+            // 
+            // RetailPriceColumn
+            // 
+            RetailPriceColumn.HeaderText = "سعر بيع الصنف";
+            RetailPriceColumn.Name = "RetailPriceColumn";
+            RetailPriceColumn.ReadOnly = true;
+            // 
+            // QuantityColumn
+            // 
+            QuantityColumn.HeaderText = "الكمية المتاحة من الصنف";
+            QuantityColumn.Name = "QuantityColumn";
+            QuantityColumn.ReadOnly = true;
+            // 
+            // CatalogRelatedColumn
+            // 
+            CatalogRelatedColumn.HeaderText = "تابع لكتالوج";
+            CatalogRelatedColumn.Name = "CatalogRelatedColumn";
+            CatalogRelatedColumn.ReadOnly = true;
+            // 
+            // SectionRelatedColumn
+            // 
+            SectionRelatedColumn.HeaderText = "تابع لقسم";
+            SectionRelatedColumn.Name = "SectionRelatedColumn";
+            SectionRelatedColumn.ReadOnly = true;
+            // 
+            // BrandRelatedColumn
+            // 
+            BrandRelatedColumn.HeaderText = "تابع للعلامة التجارية";
+            BrandRelatedColumn.Name = "BrandRelatedColumn";
+            BrandRelatedColumn.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -95,6 +153,31 @@
             AddNewItemTool.Size = new Size(114, 49);
             AddNewItemTool.Text = "إضافة صنف جديد";
             AddNewItemTool.ToolTipText = "إضافة صنف جديد";
+            AddNewItemTool.Click += AddNewItemTool_Click;
+            // 
+            // ItemExtraDataTool
+            // 
+            ItemExtraDataTool.DropDownItems.AddRange(new ToolStripItem[] { CurrentItemExpiryTool, CurrentItemPhoto });
+            ItemExtraDataTool.Image = Properties.Resources.ExtraData;
+            ItemExtraDataTool.ImageTransparentColor = Color.Magenta;
+            ItemExtraDataTool.Name = "ItemExtraDataTool";
+            ItemExtraDataTool.Size = new Size(192, 49);
+            ItemExtraDataTool.Text = "بيانات إضافية عن الصنف الحالي";
+            // 
+            // CurrentItemExpiryTool
+            // 
+            CurrentItemExpiryTool.Name = "CurrentItemExpiryTool";
+            CurrentItemExpiryTool.Size = new Size(209, 22);
+            CurrentItemExpiryTool.Text = "تاريخ صلاحية الصنف الحالي";
+            CurrentItemExpiryTool.Click += CurrentItemExpiryTool_Click;
+            // 
+            // CurrentItemPhoto
+            // 
+            CurrentItemPhoto.Image = Properties.Resources.Image;
+            CurrentItemPhoto.Name = "CurrentItemPhoto";
+            CurrentItemPhoto.Size = new Size(209, 22);
+            CurrentItemPhoto.Text = "عرض صورة الصنف الحالي";
+            CurrentItemPhoto.Click += CurrentItemPhoto_Click;
             // 
             // UpdateCurrentItemTool
             // 
@@ -103,6 +186,7 @@
             UpdateCurrentItemTool.Name = "UpdateCurrentItemTool";
             UpdateCurrentItemTool.Size = new Size(160, 49);
             UpdateCurrentItemTool.Text = "تعديل بيانات الصنف الحالي";
+            UpdateCurrentItemTool.Click += UpdateCurrentItemTool_Click;
             // 
             // DeleteCurrentItemTool
             // 
@@ -111,6 +195,7 @@
             DeleteCurrentItemTool.Name = "DeleteCurrentItemTool";
             DeleteCurrentItemTool.Size = new Size(156, 49);
             DeleteCurrentItemTool.Text = "حذف بيانات الصنف الحالي";
+            DeleteCurrentItemTool.Click += DeleteCurrentItemTool_Click;
             // 
             // PrintAllItemsTool
             // 
@@ -119,6 +204,14 @@
             PrintAllItemsTool.Name = "PrintAllItemsTool";
             PrintAllItemsTool.Size = new Size(162, 49);
             PrintAllItemsTool.Text = "طباعة تقرير بقائمة الأصناف";
+            // 
+            // toolStripButton1
+            // 
+            toolStripButton1.Image = Properties.Resources.ExportData;
+            toolStripButton1.ImageTransparentColor = Color.Magenta;
+            toolStripButton1.Name = "toolStripButton1";
+            toolStripButton1.Size = new Size(131, 49);
+            toolStripButton1.Text = "تصدير قائمة الأصناف";
             // 
             // ItemSearch
             // 
@@ -136,10 +229,11 @@
             // 
             ItemSearchTextBox.Location = new Point(6, 34);
             ItemSearchTextBox.Name = "ItemSearchTextBox";
-            ItemSearchTextBox.PlaceholderText = "برجاء إدخال إسم أو كود الصنف";
+            ItemSearchTextBox.PlaceholderText = "برجاء إدخال معلومات عن الصنف المراد البحث عنه";
             ItemSearchTextBox.Size = new Size(1014, 23);
             ItemSearchTextBox.TabIndex = 1;
             ItemSearchTextBox.TextAlign = HorizontalAlignment.Center;
+            ItemSearchTextBox.TextChanged += ItemSearchTextBox_TextChanged;
             // 
             // ItemIdentifierLabel
             // 
@@ -149,36 +243,6 @@
             ItemIdentifierLabel.Size = new Size(71, 15);
             ItemIdentifierLabel.TabIndex = 0;
             ItemIdentifierLabel.Text = "بيانات البحث:";
-            // 
-            // toolStripButton1
-            // 
-            toolStripButton1.Image = Properties.Resources.ExportData;
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(131, 49);
-            toolStripButton1.Text = "تصدير قائمة الأصناف";
-            // 
-            // ItemExtraDataTool
-            // 
-            ItemExtraDataTool.DropDownItems.AddRange(new ToolStripItem[] { CurrentItemExpiryTool, CurrentItemPhoto });
-            ItemExtraDataTool.Image = Properties.Resources.ExtraData;
-            ItemExtraDataTool.ImageTransparentColor = Color.Magenta;
-            ItemExtraDataTool.Name = "ItemExtraDataTool";
-            ItemExtraDataTool.Size = new Size(192, 49);
-            ItemExtraDataTool.Text = "بيانات إضافية عن الصنف الحالي";
-            // 
-            // CurrentItemExpiryTool
-            // 
-            CurrentItemExpiryTool.Name = "CurrentItemExpiryTool";
-            CurrentItemExpiryTool.Size = new Size(209, 22);
-            CurrentItemExpiryTool.Text = "تاريخ صلاحية الصنف الحالي";
-            // 
-            // CurrentItemPhoto
-            // 
-            CurrentItemPhoto.Image = Properties.Resources.Image;
-            CurrentItemPhoto.Name = "CurrentItemPhoto";
-            CurrentItemPhoto.Size = new Size(209, 22);
-            CurrentItemPhoto.Text = "عرض صورة الصنف الحالي";
             // 
             // ItemsControlView
             // 
@@ -194,6 +258,8 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "عرض كل الأصناف";
+            Activated += ItemsControlView_Activated;
+            Load += ItemsControlView_Load;
             ItemsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ItemsListGridView).EndInit();
             toolStrip1.ResumeLayout(false);
@@ -219,5 +285,13 @@
         private ToolStripDropDownButton ItemExtraDataTool;
         private ToolStripMenuItem CurrentItemExpiryTool;
         private ToolStripMenuItem CurrentItemPhoto;
+        private DataGridViewTextBoxColumn IDColumn;
+        private DataGridViewTextBoxColumn BarcodeColumn;
+        private DataGridViewTextBoxColumn NameColumn;
+        private DataGridViewTextBoxColumn RetailPriceColumn;
+        private DataGridViewTextBoxColumn QuantityColumn;
+        private DataGridViewTextBoxColumn CatalogRelatedColumn;
+        private DataGridViewTextBoxColumn SectionRelatedColumn;
+        private DataGridViewTextBoxColumn BrandRelatedColumn;
     }
 }

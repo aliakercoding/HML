@@ -62,5 +62,11 @@ namespace HMLalpha.Views
             AddNewItemView addNewItemView = new AddNewItemView();
             addNewItemView.ShowDialog();
         }
+
+        private void ListItemsMenu_Click(object sender, EventArgs e)
+        {
+            ItemsControlView itemsControlView = new ItemsControlView();
+            itemsControlView.ShowDialog();
+        }
     }
 }
