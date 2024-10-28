@@ -104,21 +104,21 @@
             // 
             LoginMenu.Image = Properties.Resources.LoginUser;
             LoginMenu.Name = "LoginMenu";
-            LoginMenu.Size = new Size(180, 22);
+            LoginMenu.Size = new Size(150, 22);
             LoginMenu.Text = "تسجيل ال&دخول";
             LoginMenu.Click += LoginMenu_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(147, 6);
             toolStripSeparator1.Visible = false;
             // 
             // UserProfileMenu
             // 
             UserProfileMenu.Image = Properties.Resources.UserProfile;
             UserProfileMenu.Name = "UserProfileMenu";
-            UserProfileMenu.Size = new Size(180, 22);
+            UserProfileMenu.Size = new Size(150, 22);
             UserProfileMenu.Text = "ال&ملف الشخصي";
             UserProfileMenu.Visible = false;
             // 
@@ -137,6 +137,7 @@
             ListItemsMenu.ShortcutKeys = Keys.Control | Keys.L;
             ListItemsMenu.Size = new Size(207, 22);
             ListItemsMenu.Text = "&عرض كل الأصناف";
+            ListItemsMenu.Click += ListItemsMenu_Click;
             // 
             // DefineNewItemMenu
             // 
@@ -320,6 +321,7 @@
             PurchasesControlMenu.Name = "PurchasesControlMenu";
             PurchasesControlMenu.Size = new Size(215, 22);
             PurchasesControlMenu.Text = "إدارة الم&شتريات";
+            PurchasesControlMenu.Click += PurchasesControlMenu_Click;
             // 
             // toolStripSeparator7
             // 

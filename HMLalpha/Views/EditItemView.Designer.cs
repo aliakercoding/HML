@@ -1,6 +1,6 @@
 ﻿namespace HMLalpha.Views
 {
-    partial class AddNewItemView
+    partial class EditItemView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            splitContainer1 = new SplitContainer();
+            HelperTooltip = new ToolTip(components);
+            ItemNPPTextBox = new TextBox();
+            ItemPPITextBox = new TextBox();
             ItemPhotoSelectorButton = new Button();
+            button2 = new Button();
+            panel1 = new Panel();
+            button1 = new Button();
+            label10 = new Label();
+            label12 = new Label();
+            label9 = new Label();
+            label11 = new Label();
+            label14 = new Label();
+            splitContainer1 = new SplitContainer();
             ItemRelatedOffersButton = new Button();
             ItemPhotoSelector = new PictureBox();
             UserPointsTextBox = new TextBox();
@@ -40,13 +51,6 @@
             ItemCatalogSelector = new ComboBox();
             label13 = new Label();
             label15 = new Label();
-            label10 = new Label();
-            label12 = new Label();
-            label9 = new Label();
-            label11 = new Label();
-            label14 = new Label();
-            ItemNPPTextBox = new TextBox();
-            ItemPPITextBox = new TextBox();
             ItemVATTextBox = new TextBox();
             ItemVendorPriceTextBox = new TextBox();
             ItemRetailPriceTextBox = new TextBox();
@@ -60,17 +64,132 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel1 = new Panel();
             CancelButton = new Button();
-            AddNewItemButton = new Button();
-            HelperTooltip = new ToolTip(components);
+            UpdateItemButton = new Button();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ItemPhotoSelector).BeginInit();
-            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
+            // 
+            // HelperTooltip
+            // 
+            HelperTooltip.ShowAlways = true;
+            HelperTooltip.ToolTipIcon = ToolTipIcon.Info;
+            // 
+            // ItemNPPTextBox
+            // 
+            ItemNPPTextBox.Location = new Point(41, 372);
+            ItemNPPTextBox.Name = "ItemNPPTextBox";
+            ItemNPPTextBox.PlaceholderText = "برجاء إدخال العدد المكون لكل جزء هنا مثال:(3)";
+            ItemNPPTextBox.RightToLeft = RightToLeft.Yes;
+            ItemNPPTextBox.Size = new Size(126, 23);
+            ItemNPPTextBox.TabIndex = 23;
+            HelperTooltip.SetToolTip(ItemNPPTextBox, "العدد لكل جزء يعني أن الجزء الواحد من الصنف (الشريط) يتكون من كم (قرص / كبسول) مثال: الشريط الواحد يتألف من 10 أقراص");
+            ItemNPPTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
+            // 
+            // ItemPPITextBox
+            // 
+            ItemPPITextBox.Location = new Point(317, 372);
+            ItemPPITextBox.Name = "ItemPPITextBox";
+            ItemPPITextBox.PlaceholderText = "برجاء إدخال عدد الأجزاء هنا مثال:(3)";
+            ItemPPITextBox.RightToLeft = RightToLeft.Yes;
+            ItemPPITextBox.Size = new Size(102, 23);
+            ItemPPITextBox.TabIndex = 24;
+            HelperTooltip.SetToolTip(ItemPPITextBox, "عدد الأجزاء في الصنف عبارة عن من كم جزء (شريط) تتكون العبوة الكاملة للصنف مثال: العبوة الواحدة = 3 أشرطة");
+            ItemPPITextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
+            // 
+            // ItemPhotoSelectorButton
+            // 
+            ItemPhotoSelectorButton.Enabled = false;
+            ItemPhotoSelectorButton.Image = Properties.Resources.Image;
+            ItemPhotoSelectorButton.Location = new Point(241, 444);
+            ItemPhotoSelectorButton.Name = "ItemPhotoSelectorButton";
+            ItemPhotoSelectorButton.Size = new Size(36, 23);
+            ItemPhotoSelectorButton.TabIndex = 3;
+            ItemPhotoSelectorButton.Tag = "إختيار صورة للصنف";
+            HelperTooltip.SetToolTip(ItemPhotoSelectorButton, "قم بالضغط هنا لإختيار صورة للصنف");
+            ItemPhotoSelectorButton.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(433, 8);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 2;
+            button2.Text = "إلغاء";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(-121, 454);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1042, 39);
+            panel1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(534, 8);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "إضافة";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(302, 336);
+            label10.Name = "label10";
+            label10.RightToLeft = RightToLeft.Yes;
+            label10.Size = new Size(169, 15);
+            label10.TabIndex = 0;
+            label10.Text = "عدد النقاط المكتسبة (للمستخدم):";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(413, 130);
+            label12.Name = "label12";
+            label12.RightToLeft = RightToLeft.Yes;
+            label12.Size = new Size(58, 15);
+            label12.TabIndex = 0;
+            label12.Text = "تابع لقسم:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(317, 287);
+            label9.Name = "label9";
+            label9.RightToLeft = RightToLeft.Yes;
+            label9.Size = new Size(154, 15);
+            label9.TabIndex = 0;
+            label9.Text = "عدد النقاط المكتسبة (للعميل):";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(405, 81);
+            label11.Name = "label11";
+            label11.RightToLeft = RightToLeft.Yes;
+            label11.Size = new Size(66, 15);
+            label11.TabIndex = 0;
+            label11.Text = "تابع لكتالوج:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(181, 33);
+            label14.Name = "label14";
+            label14.Size = new Size(118, 15);
+            label14.TabIndex = 0;
+            label14.Text = "بيانات الصنف الإضافية";
             // 
             // splitContainer1
             // 
@@ -113,22 +232,9 @@
             splitContainer1.Panel2.Controls.Add(label3);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(label1);
-            splitContainer1.Size = new Size(1042, 490);
-            splitContainer1.SplitterDistance = 489;
-            splitContainer1.TabIndex = 0;
-            // 
-            // ItemPhotoSelectorButton
-            // 
-            ItemPhotoSelectorButton.Enabled = false;
-            ItemPhotoSelectorButton.Image = Properties.Resources.Image;
-            ItemPhotoSelectorButton.Location = new Point(241, 444);
-            ItemPhotoSelectorButton.Name = "ItemPhotoSelectorButton";
-            ItemPhotoSelectorButton.Size = new Size(36, 23);
-            ItemPhotoSelectorButton.TabIndex = 3;
-            ItemPhotoSelectorButton.Tag = "إختيار صورة للصنف";
-            HelperTooltip.SetToolTip(ItemPhotoSelectorButton, "قم بالضغط هنا لإختيار صورة للصنف");
-            ItemPhotoSelectorButton.UseVisualStyleBackColor = true;
-            ItemPhotoSelectorButton.Click += ItemPhotoSelectorButton_Click;
+            splitContainer1.Size = new Size(1046, 490);
+            splitContainer1.SplitterDistance = 490;
+            splitContainer1.TabIndex = 2;
             // 
             // ItemRelatedOffersButton
             // 
@@ -214,77 +320,6 @@
             label15.Size = new Size(76, 15);
             label15.TabIndex = 0;
             label15.Text = "صورة الصنف:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(302, 336);
-            label10.Name = "label10";
-            label10.RightToLeft = RightToLeft.Yes;
-            label10.Size = new Size(169, 15);
-            label10.TabIndex = 0;
-            label10.Text = "عدد النقاط المكتسبة (للمستخدم):";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(413, 130);
-            label12.Name = "label12";
-            label12.RightToLeft = RightToLeft.Yes;
-            label12.Size = new Size(58, 15);
-            label12.TabIndex = 0;
-            label12.Text = "تابع لقسم:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(317, 287);
-            label9.Name = "label9";
-            label9.RightToLeft = RightToLeft.Yes;
-            label9.Size = new Size(154, 15);
-            label9.TabIndex = 0;
-            label9.Text = "عدد النقاط المكتسبة (للعميل):";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(405, 81);
-            label11.Name = "label11";
-            label11.RightToLeft = RightToLeft.Yes;
-            label11.Size = new Size(66, 15);
-            label11.TabIndex = 0;
-            label11.Text = "تابع لكتالوج:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(181, 33);
-            label14.Name = "label14";
-            label14.Size = new Size(118, 15);
-            label14.TabIndex = 0;
-            label14.Text = "بيانات الصنف الإضافية";
-            // 
-            // ItemNPPTextBox
-            // 
-            ItemNPPTextBox.Location = new Point(41, 372);
-            ItemNPPTextBox.Name = "ItemNPPTextBox";
-            ItemNPPTextBox.PlaceholderText = "برجاء إدخال العدد المكون لكل جزء هنا مثال:(3)";
-            ItemNPPTextBox.RightToLeft = RightToLeft.Yes;
-            ItemNPPTextBox.Size = new Size(126, 23);
-            ItemNPPTextBox.TabIndex = 23;
-            HelperTooltip.SetToolTip(ItemNPPTextBox, "العدد لكل جزء يعني أن الجزء الواحد من الصنف (الشريط) يتكون من كم (قرص / كبسول) مثال: الشريط الواحد يتألف من 10 أقراص");
-            ItemNPPTextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
-            // 
-            // ItemPPITextBox
-            // 
-            ItemPPITextBox.Location = new Point(317, 372);
-            ItemPPITextBox.Name = "ItemPPITextBox";
-            ItemPPITextBox.PlaceholderText = "برجاء إدخال عدد الأجزاء هنا مثال:(3)";
-            ItemPPITextBox.RightToLeft = RightToLeft.Yes;
-            ItemPPITextBox.Size = new Size(102, 23);
-            ItemPPITextBox.TabIndex = 24;
-            HelperTooltip.SetToolTip(ItemPPITextBox, "عدد الأجزاء في الصنف عبارة عن من كم جزء (شريط) تتكون العبوة الكاملة للصنف مثال: العبوة الواحدة = 3 أشرطة");
-            ItemPPITextBox.TextChanged += ItemBarcodeTextBox_TextChanged;
             // 
             // ItemVATTextBox
             // 
@@ -417,15 +452,6 @@
             label1.TabIndex = 0;
             label1.Text = "بيانات الصنف الأساسية";
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(CancelButton);
-            panel1.Controls.Add(AddNewItemButton);
-            panel1.Location = new Point(0, 496);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1042, 39);
-            panel1.TabIndex = 1;
-            // 
             // CancelButton
             // 
             CancelButton.Location = new Point(433, 8);
@@ -436,37 +462,41 @@
             CancelButton.UseVisualStyleBackColor = true;
             CancelButton.Click += CancelButton_Click;
             // 
-            // AddNewItemButton
+            // UpdateItemButton
             // 
-            AddNewItemButton.Location = new Point(534, 8);
-            AddNewItemButton.Name = "AddNewItemButton";
-            AddNewItemButton.Size = new Size(75, 23);
-            AddNewItemButton.TabIndex = 2;
-            AddNewItemButton.Text = "إضافة";
-            AddNewItemButton.UseVisualStyleBackColor = true;
-            AddNewItemButton.Click += AddNewItemButton_Click;
+            UpdateItemButton.Location = new Point(534, 8);
+            UpdateItemButton.Name = "UpdateItemButton";
+            UpdateItemButton.Size = new Size(75, 23);
+            UpdateItemButton.TabIndex = 2;
+            UpdateItemButton.Text = "تعديل";
+            UpdateItemButton.UseVisualStyleBackColor = true;
+            UpdateItemButton.Click += UpdateItemButton_Click;
             // 
-            // HelperTooltip
+            // panel2
             // 
-            HelperTooltip.ShowAlways = true;
-            HelperTooltip.ToolTipIcon = ToolTipIcon.Info;
+            panel2.Controls.Add(CancelButton);
+            panel2.Controls.Add(UpdateItemButton);
+            panel2.Location = new Point(4, 496);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1042, 39);
+            panel2.TabIndex = 4;
             // 
-            // AddNewItemView
+            // EditItemView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1042, 536);
-            Controls.Add(panel1);
+            ClientSize = new Size(1046, 540);
+            Controls.Add(panel2);
             Controls.Add(splitContainer1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "AddNewItemView";
+            Controls.Add(panel1);
+            Name = "EditItemView";
             RightToLeftLayout = true;
             ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
-            Text = "تعريف صنف جديد";
-            Load += AddNewItemView_Load;
+            Text = "تعديل بيانات الصنف";
+            Load += EditItemView_Load;
+            panel1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -474,33 +504,38 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ItemPhotoSelector).EndInit();
-            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private SplitContainer splitContainer1;
-        private Label label1;
-        private Label label9;
-        private FileSystemWatcher fileSystemWatcher1;
-        private Label label13;
+        private ToolTip HelperTooltip;
+        private TextBox ItemNPPTextBox;
+        private TextBox ItemPPITextBox;
+        private Button ItemPhotoSelectorButton;
+        private Button button2;
+        private Panel panel1;
+        private Button button1;
         private Label label10;
         private Label label12;
+        private Label label9;
         private Label label11;
         private Label label14;
+        private SplitContainer splitContainer1;
+        private Button ItemRelatedOffersButton;
+        private PictureBox ItemPhotoSelector;
         private TextBox UserPointsTextBox;
         private TextBox CustomerPointsTextBox;
         private ComboBox ItemBrandSelector;
         private ComboBox ItemSectionSelector;
         private ComboBox ItemCatalogSelector;
-        private TextBox ItemNPPTextBox;
-        private TextBox ItemPPITextBox;
+        private Label label13;
+        private Label label15;
         private TextBox ItemVATTextBox;
         private TextBox ItemVendorPriceTextBox;
         private TextBox ItemRetailPriceTextBox;
         private TextBox ItemNameTextBox;
-        private TextBox textBox2;
         private TextBox ItemBarcodeTextBox;
         private Label label8;
         private Label label7;
@@ -509,13 +544,9 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Panel panel1;
+        private Label label1;
         private Button CancelButton;
-        private Button AddNewItemButton;
-        private Button ItemRelatedOffersButton;
-        private PictureBox ItemPhotoSelector;
-        private Label label15;
-        private Button ItemPhotoSelectorButton;
-        private ToolTip HelperTooltip;
+        private Button UpdateItemButton;
+        private Panel panel2;
     }
 }
